@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content%}
+<h2>New Facility Type</h2>
+{% if error_message %}
+    <p><strong>{{ error_message }}</strong></p>
+{% endif %}
+<form action="{% url newFacilityType %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+</form>
+{% endblock content%}  

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+{% block content %}
+{% if object %}  
+
+  <h2 style="float:left;width:60%">{{ object.title }}</h2><small style="float:right;">{{ object.created|date:"l - F d, Y g:i a" }} </small>
+  <br class="clear"/>
+  <h4 style="float:left;width:60%">{{ object.area }}</h4><span style="float:right;" class="{{object.status|apnumber}}">{{ object.get_status_display }}</span>
+  
+  <br class="clear" />
+  <pre>{{ object.notes }}</pre>
+  {% if object.alarm %}   <div class="attr"><label>Alarm:     </label> {{ object.alarm }}              </div>{% endif %}
+  {% if object.facility %}<div class="attr"><label>Facility:  </label> {{ object.facility }}           </div>{% endif %}
+  {% if object.mf_area %} <div class="attr"><label>Mainframe: </label> {{ object.get_mf_area_display }}</div>{% endif %}
+  
+  <br class="clear"/>
+  {% if user.is_authenticated %} [<a href="{% url log-edit object.id %}">modify</a>]{% endif %}
+  <p style="float:right;text-align:right;width:35%">created by: {{ object.created_by }}</p>
+
+  
+{% endif %}
+
+{% endblock content %}

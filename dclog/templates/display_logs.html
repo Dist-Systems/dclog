@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+
+{% block content %}
+  {% if object_list %}
+      {% for log in object_list %}
+        <div class="{% cycle 'row1' 'row2' %}"><a href="{% url log-display log.id %}">{{ log.eventTime|date:'Y.m.d // H:i' }} // {{ log.title}} // {{ log.area }}<span class="{{log.status|apnumber}}">{{ log.get_status_display }}</span></a></div>
+      {% endfor %}
+  {% else %}
+    <p>No logs created yet.</p>
+  {% endif %}
+
+{% endblock content %}

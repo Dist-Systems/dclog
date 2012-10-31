@@ -1,0 +1,162 @@
+[
+  {
+    "pk": 1, 
+    "model": "dclog.facility", 
+    "fields": {
+      "name": "HVAC", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "dclog.facility", 
+    "fields": {
+      "name": "Fire/Smoke", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "dclog.facility", 
+    "fields": {
+      "name": "Water", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "dclog.facility", 
+    "fields": {
+      "name": "Power/UPS", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "dclog.facility", 
+    "fields": {
+      "name": "Other", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "dclog.facility", 
+    "fields": {
+      "name": "Security", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "dclog.alarm", 
+    "fields": {
+      "name": "NHDC2", 
+      "description": "NHDC building security"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "dclog.alarm", 
+    "fields": {
+      "name": "PAL-AT", 
+      "description": "NHDC subfloor leak detection"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "dclog.alarm", 
+    "fields": {
+      "name": "Fire", 
+      "description": "NH building fire alarm"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "dclog.alarm", 
+    "fields": {
+      "name": "UPS1R", 
+      "description": "NHDC remote monitor for UPS1"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "dclog.alarm", 
+    "fields": {
+      "name": "UPS2R", 
+      "description": "NHDC remote monitor for UPS2"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "dclog.alarm", 
+    "fields": {
+      "name": "VESDA", 
+      "description": "NHDC active smoke detection"
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "dclog.alarm", 
+    "fields": {
+      "name": "Power Command", 
+      "description": "Panel alarm in data center office"
+    }
+  },   
+  {
+    "pk": 1, 
+    "model": "dclog.area", 
+    "fields": {
+      "name": "Customer", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "dclog.area", 
+    "fields": {
+      "name": "Facility", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "dclog.area", 
+    "fields": {
+      "name": "MainFrame", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "dclog.area", 
+    "fields": {
+      "name": "Network/Comm.", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "dclog.area", 
+    "fields": {
+      "name": "Other", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "dclog.area", 
+    "fields": {
+      "name": "UCSB/Staff", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "dclog.area", 
+    "fields": {
+      "name": "Vendor", 
+      "description": ""
+    }
+  }
+]

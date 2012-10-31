@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Search</h2> 
+
+  {% if query %}
+    <p>Results for "{{ query|escape }}":</p>
+
+    {% if results %}
+      <ul>
+      {% for log in results %}
+        <li><a href="{% url log-display log.id %}">{{ log.created|date:'Ymd' }}</a> - {{ log.title|slice:":37"}}...</l1>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>No logs found</p>
+    {% endif %}
+
+  {% endif %} 
+
+{% endblock content %}
