@@ -51,6 +51,30 @@ def editLog(request, log_id):
         form = EditLogForm(instance=log) 
     return render_to_response('log_edit.html', {'form': form, 'log_id':log.id}, context_instance=RequestContext(request))   
 
+
+def newUpdate(request, log_id): 
+    # Which Log will this be an update for?
+    log = get_object_or_404(Log, pk=log_id)
+
+    # If the form has been submitted...
+    if request.method == 'POST': 
+        # A form bound to the POST data 
+        #pprint.pprint(globals())
+        form = NewUpdateForm(request.user, request.POST) #, instance=log)
+        # All validation rules pass
+        if form.is_valid(): 
+            form.save()
+            # Redirect after POST
+            return HttpResponseRedirect('/') 
+    else:
+        # An unbound form
+        form = NewUpdateForm(request.user)#, instance=log)
+        form.created_by = request.user 
+        #print request.user.username
+        
+	# display either the form
+    return render_to_response('update_new.html', { 'form': form, 'log_id':log.id }, context_instance=RequestContext(request))
+
 def newAlarm(request): 
     # If the form has been submitted...
     if request.method == 'POST': 

@@ -21,6 +21,22 @@ class EditLogForm(forms.ModelForm):
     class Meta:
         model = Log
 
+class NewUpdateForm(forms.ModelForm):
+    created_by = None 
+
+    def __init__(self, user, *args, **kwargs):
+        self.created_by = user
+        self.log = log_id
+        super(NewUpdateForm, self).__init__(*args, **kwargs)
+
+    def save(self):
+        self.instance.created_by = self.created_by
+        self.instance.log = self.log
+        return super(NewUpdateForm, self).save()
+
+    class Meta:
+        model = Update 
+
 class NewAlarmForm(forms.ModelForm):
     class Meta:
         model = Alarm

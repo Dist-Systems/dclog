@@ -32,6 +32,7 @@ urlpatterns = patterns('',
     # protected urls that will require login
 	url(r'^alarm/create/', login_required(newAlarm), name='newAlarm'),
     url(r'^area/create/', login_required(newArea), name='newArea'),
+    url(r'^update/(?P<log_id>\d+)/create/', login_required(newUpdate), name='newUpdate'),
     url(r'^facility_type/create/', login_required(newFacilityType), name='newFacilityType'),
 	
     url(r'^search/', login_required(search), name='search'),

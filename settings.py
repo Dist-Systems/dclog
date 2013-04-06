@@ -14,7 +14,7 @@ LOGIN_REDIRECT_URL ='/'  # https://docs.djangoproject.com/en/dev/topics/auth/#dj
 DJANGO_ROOT = os.path.dirname(os.path.realpath(django.__file__))
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
-DEBUG = False 
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -79,7 +79,7 @@ SECRET_KEY = 'Makethisuniqueanddontshareitwithanybody'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+#   'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -112,5 +112,5 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     'django.contrib.humanize',
-	'nhdc.dclog',
+    'nhdc.dclog',
 )

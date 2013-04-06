@@ -27,7 +27,6 @@ MF_CHOICES = (
 
 class Log(models.Model): 
     title      = models.CharField(max_length="30",unique=True)  
-    # created    = models.DateField(default=date.today, editable=False)
     created    = models.DateTimeField(default=datetime.now, editable=False)
     updated    = models.DateTimeField(default=datetime.now, editable=False)
     eventTime  = models.DateTimeField(default=datetime.now)
@@ -37,18 +36,23 @@ class Log(models.Model):
     alarm      = models.ForeignKey('Alarm', blank=True, null=True)           # Foreign Key is the alarm which might be associated with this event
     facility   = models.ForeignKey('Facility', blank=True, null=True, verbose_name='facility area')  
     created_by = models.ForeignKey(User, editable=False)
-    mf_area = models.CharField(max_length=2,choices=MF_CHOICES, blank=True, verbose_name='mainframe area')
+    mf_area    = models.CharField(max_length=2,choices=MF_CHOICES, blank=True, verbose_name='mainframe area')
 
     def save(self):
         if not self.id:
             self.created = datetime.today()
-            #self.eventTime = datetime.today()
         self.updated     = datetime.today()
-#        self.created_by  = created_by
         super(Log, self).save() 
 
     def __unicode__(self):
         return self.notes
+
+class Update(models.Model):
+	created    = models.DateTimeField(default=datetime.now, editable=False)
+	created_by = models.ForeignKey(User, editable=False)
+	notes      = models.TextField()
+	log        = models.ForeignKey('Log', editable=False)
+
 
 #    @models.permalink
 #    def get_absolute_url(self):
