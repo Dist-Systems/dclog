@@ -1,4 +1,4 @@
-# Django settings for nhdc project.
+# Django settings for data center logger project.
 import os 
 import django             
 
